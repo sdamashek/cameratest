@@ -53,6 +53,7 @@ class ViewController2: UIViewController {
     var model: cameratestModel!
     var captureSession : AVCaptureSession!
     var captureDevice : AVCaptureDevice!
+    let frameRate : Int32 = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,8 +71,14 @@ class ViewController2: UIViewController {
                         return;
                     }
                     captureDevice = device
-                    captureDevice.activeVideoMaxFrameDuration = CMTimeMake(1, 120)
-                    captureDevice.activeVideoMinFrameDuration = CMTimeMake(1, 120)
+                    do {
+                        try captureDevice.lockForConfiguration()
+                    } catch {
+                        print("No perms")
+                        return;
+                    }
+                    captureDevice.activeVideoMaxFrameDuration = CMTimeMake(1, frameRate)
+                    captureDevice.activeVideoMinFrameDuration = CMTimeMake(1, frameRate)
                     beginCapture()
                 }
             }
@@ -98,7 +105,7 @@ class ViewController2: UIViewController {
         let movieFileOutput = AVCaptureMovieFileOutput()
         captureSession.addOutput(movieFileOutput)
         
-        movieFileOutput.maxRecordedDuration = CMTimeMake(Int64(30 * 120), 120)
+        movieFileOutput.maxRecordedDuration = CMTimeMake(Int64(30 * frameRate), frameRate)
         
         let fileManager = NSFileManager()
         let path = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!.path!.stringByAppendingString("/record.mp4")
