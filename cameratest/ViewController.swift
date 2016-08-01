@@ -63,7 +63,7 @@ class ViewController2: UIViewController {
         captureSession = AVCaptureSession()
         let devices = AVCaptureDevice.devices()
         for device in devices {
-            if device.hasMediaType(AVMed21iaTypeVideo) {
+            if device.hasMediaType(AVMediaTypeVideo) {
                 if device.position == AVCaptureDevicePosition.Back {
                     guard let device = device as? AVCaptureDevice else {
                         print("Doesn't exist")
