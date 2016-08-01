@@ -14,6 +14,7 @@
 		BB818EE01D34800000E6D4DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB818EDE1D34800000E6D4DD /* LaunchScreen.storyboard */; };
 		BB818EEB1D34800000E6D4DD /* cameratestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB818EEA1D34800000E6D4DD /* cameratestTests.swift */; };
 		BB818EF61D34800000E6D4DD /* cameratestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB818EF51D34800000E6D4DD /* cameratestUITests.swift */; };
+		BBDED5F61D35C8BE008B4B1E /* cameratest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDED5F51D35C8BE008B4B1E /* cameratest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BB818EF11D34800000E6D4DD /* cameratestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cameratestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB818EF51D34800000E6D4DD /* cameratestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameratestUITests.swift; sourceTree = "<group>"; };
 		BB818EF71D34800000E6D4DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBDED5F51D35C8BE008B4B1E /* cameratest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameratest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				BB818EDC1D34800000E6D4DD /* Assets.xcassets */,
 				BB818EDE1D34800000E6D4DD /* LaunchScreen.storyboard */,
 				BB818EE11D34800000E6D4DD /* Info.plist */,
+				BBDED5F51D35C8BE008B4B1E /* cameratest.swift */,
 			);
 			path = cameratest;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBDED5F61D35C8BE008B4B1E /* cameratest.swift in Sources */,
 				BB818ED81D347FFF00E6D4DD /* ViewController.swift in Sources */,
 				BB818ED61D347FFF00E6D4DD /* AppDelegate.swift in Sources */,
 			);
@@ -484,6 +488,7 @@
 				BB818EFC1D34800000E6D4DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB818EFD1D34800000E6D4DD /* Build configuration list for PBXNativeTarget "cameratestTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				BB818EFF1D34800000E6D4DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB818F001D34800000E6D4DD /* Build configuration list for PBXNativeTarget "cameratestUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				BB818F021D34800000E6D4DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

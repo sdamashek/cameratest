@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FSE-xc-ljf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Test Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cameratest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,95 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiB-G1-Ps1">
+                                <rect key="frame" x="264" y="222" width="73" height="30"/>
+                                <state key="normal" title="Begin Test"/>
+                                <connections>
+                                    <segue destination="7pO-Nj-PHE" kind="show" identifier="testRunSegue" id="hdU-5u-MoN"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vfp-RQ-g5o" userLabel="studentIDField">
+                                <rect key="frame" x="219" y="168" width="163" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="lb4-Lm-Zj2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="studentIDChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ogx-4R-5fu"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YiB-G1-Ps1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EcJ-Z0-A6L"/>
+                            <constraint firstItem="vfp-RQ-g5o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="aqj-56-L3W"/>
+                            <constraint firstItem="vfp-RQ-g5o" firstAttribute="centerX" secondItem="YiB-G1-Ps1" secondAttribute="centerX" id="bcn-CU-EEh"/>
+                            <constraint firstItem="YiB-G1-Ps1" firstAttribute="top" secondItem="vfp-RQ-g5o" secondAttribute="bottom" constant="24" id="u03-Wa-Oh8"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Test Screen" id="Zrz-5Y-RVL"/>
+                    <connections>
+                        <outlet property="studentIDField" destination="vfp-RQ-g5o" id="w0c-7m-aL4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="964" y="269"/>
+        </scene>
+        <!--Running Test...-->
+        <scene sceneID="oFL-UB-LM1">
+            <objects>
+                <viewController id="7pO-Nj-PHE" customClass="ViewController2" customModule="cameratest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RcD-oE-b1N"/>
+                        <viewControllerLayoutGuide type="bottom" id="TYF-OI-fRu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8RL-JU-baB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOT-iF-Upm" userLabel="scoreResultLabel">
+                                <rect key="frame" x="247" y="522" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jqk-BF-Rn8">
+                                <rect key="frame" x="0.0" y="93" width="600" height="393"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Running Test..." id="KQA-fo-ERT"/>
+                    <connections>
+                        <outlet property="animationView" destination="Jqk-BF-Rn8" id="lxG-OG-fn0"/>
+                        <outlet property="scoreResultLabel" destination="XOT-iF-Upm" id="9D8-EN-FyV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MgO-qv-HOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1671" y="282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="09y-Rz-ORU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FSE-xc-ljf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6KG-on-RYi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8lB-XS-FZ5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRY-Nd-Tw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128" y="269"/>
         </scene>
     </scenes>
 </document>
